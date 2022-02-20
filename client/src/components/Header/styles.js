@@ -2,7 +2,7 @@ import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles({
   header: {
-    background: '#3F51B5'
+    background: '#3F51B5',
   },
   logo: {
     width: "10rem"
@@ -10,7 +10,7 @@ const useStyles = makeStyles({
   account: {
     marginLeft: "auto",
     display: "flex",
-    alignItems: "center",
+    alignItems: "end",
   },
   walletIcon: {
     marginRight: "0.4rem",

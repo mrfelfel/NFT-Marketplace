@@ -51,6 +51,7 @@ const CreateNFT = () => {
       console.log("slectedFile: ", selectedFile);
     }
 
+    console.log(artTokenContract)
     try {
       const totalSupply = await artTokenContract.methods.totalSupply().call();
       data.append("tokenId", Number(totalSupply) + 1);
@@ -97,7 +98,7 @@ const CreateNFT = () => {
     <div className={classes.pageCreateNft}>
       <form onSubmit={createNFT}>
         <div className={classes.formHeader}>
-          <h1>Create collectible</h1>
+          <h1>ضرب اثر</h1>
           <Link to="/">
             <CancelOutlinedIcon fontSize="large" />
           </Link>
@@ -108,7 +109,7 @@ const CreateNFT = () => {
           </div>
           <fieldset>
             <TextField
-              label="Title"
+              label="عنوان"
               name="title"
               variant="filled"
               required
@@ -120,7 +121,7 @@ const CreateNFT = () => {
               id="outlined-multiline-static"
               multiline
               rows={4}
-              label="Description"
+              label="توضیحات"
               name="description"
               variant="filled"
               required
@@ -129,19 +130,19 @@ const CreateNFT = () => {
               fullWidth
             />
             <TextField
-              label="price"
+              label="قیمت"
               name="price"
               variant="filled"
               value={formData.price}
               onChange={handleInputChange}
               InputProps={{
-                startAdornment: <InputAdornment position="start">ETH</InputAdornment>,
+                startAdornment: <InputAdornment position="start">MATIC</InputAdornment>,
               }}
               fullWidth
             />
 
             <Button variant="contained" color="primary" type="submit">
-              Submit
+              ثبت
             </Button>
           </fieldset>
         </div>

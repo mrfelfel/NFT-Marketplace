@@ -22,7 +22,7 @@ const Header = () => {
       <AppBar className={classes.header}>
         <Toolbar>
           <Link to="/">
-            <img src={logo} alt="Galerie" className={classes.logo}/>
+            <h1>چراغ نفتی</h1>
           </Link>
           <div className={classes.account}>
             <AccountBalanceWalletIcon titleAccess="Wallet Address" className={classes.walletIcon}/>

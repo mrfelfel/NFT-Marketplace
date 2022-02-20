@@ -21,7 +21,7 @@ import Card from "../../components/Card";
 
 import { useStyles } from "./styles.js";
 
-import veterans from "../../assets/arts/Sparse-Ahmed-Mostafa-vetarans-2.jpg";
+import persianTea from "../../assets/arts/1.jpg";
 import lionKing from "../../assets/arts/suresh-pydikondala-lion.jpg";
 import dreaming from "../../assets/arts/phuongvp-maybe-i-m-dreaming-by-pvpgk-deggyli.jpg";
 import modeling3d from "../../assets/arts/alan-linssen-alanlinssen-kitbashkitrender2.jpg";
@@ -29,7 +29,7 @@ import woman from "../../assets/arts/ashline-sketch-brushes-3-2.jpg";
 import stones from "../../assets/arts/rentao_-22-10-.jpg";
 import wale from "../../assets/arts/luzhan-liu-1-1500.jpg";
 import comic from "../../assets/arts/daniel-taylor-black-and-white-2019-2.jpg";
-import galerie from "../../assets/galerie.svg";
+import cheraq from "../../assets/logo.png";
 
 
 const Home = () => {
@@ -45,7 +45,7 @@ const Home = () => {
         const accounts = await web3.eth.getAccounts();
 
         if (typeof accounts === undefined) {
-          alert("Please login with Metamask!");
+          alert("با کیف پول متامسک وارد بشید!");
           console.log("login to metamask");
         }
 
@@ -122,13 +122,11 @@ const Home = () => {
         } catch (error) {
           console.error("Error", error);
           alert(
-            "Contracts not deployed to the current network " +
-              networkId.toString()
-          );
+            "این شبکه پشتیبانی نمیشود "           );
         }
       } catch (error) {
         alert(
-          `Failed to load web3, accounts, or contract. Check console for details.` +
+          `خطای عجیب الخلقه` +
             error
         );
         console.error(error);
@@ -151,7 +149,7 @@ const Home = () => {
                 <img src={dreaming} alt="dreaming" className={classes.images} />
               </Grid>
               <Grid item xs={4}>
-                <img src={veterans} alt="veterans" className={classes.images} />
+                <img src={persianTea} alt="persianTea" className={classes.images} />
               </Grid>
               <Grid item xs={7}>
                 <img src={modeling3d} alt="modeling3d" className={classes.images} />
@@ -162,11 +160,10 @@ const Home = () => {
             </Grid>
           </Grid>
           <Grid item xs={6} className={classes.main}>
-            <img src={galerie} alt="galerie" />
-            <Typography>A decentralized NFT marketplace where you can expose your art.</Typography>
+            <Typography>نخستین مارکت پلیس توکن غیر مثلی ایران </Typography>
             <Link to="/create-nft">
               <Button variant="contained" color="primary" disableElevation>
-                Mint your art
+                اثرت رو ضرب کن 
               </Button>
             </Link>
           </Grid>
@@ -189,7 +186,7 @@ const Home = () => {
         </Grid>
       </section>
       <section className={classes.allNfts}>
-        <Typography className={classes.title}>Latest artwork</Typography>
+        <Typography className={classes.title}>آخرین آثار</Typography>
         <Grid
           container
           direction="row"

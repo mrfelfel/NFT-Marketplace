@@ -90,7 +90,7 @@ const Item = () => {
             <Grid container 
               spacing={0} 
               alignItems="center"
-              justify="center"
+              
             >
               <Grid item md={7} sm={7} xs={12}>
                 <figure> 
@@ -101,7 +101,7 @@ const Item = () => {
                 <fieldset>
                   <h1>{name}</h1>
                   <TextField
-                    label="creator"
+                    label="سازنده"
                     name="creator"
                     variant="filled"
                     margin="dense"
@@ -112,7 +112,7 @@ const Item = () => {
                     }
                   />
                   <TextField
-                    label="owner"
+                    label="مالک"
                     name="owner"
                     variant="filled"
                     disabled
@@ -124,7 +124,7 @@ const Item = () => {
                     id="outlined-multiline-static"
                     multiline
                     rows={4}
-                    label="Description"
+                    label="توضیحات"
                     name="description"
                     variant="filled"
                     margin="dense"
@@ -133,14 +133,14 @@ const Item = () => {
                     defaultValue={description}
                   />
                   <TextField
-                    label="price"
+                    label="قیمت"
                     name="price"
                     variant="filled"
                     margin="dense"
                     defaultValue={Web3.utils.fromWei(String(price), "ether")}
                     InputProps={{
                       startAdornment: (
-                        <InputAdornment position="start">ETH</InputAdornment>
+                        <InputAdornment position="start">MATIC</InputAdornment>
                       ),
                     }}
                     fullWidth
@@ -150,9 +150,9 @@ const Item = () => {
                     <Button
                       variant="contained"
                       color="primary"
-                      onClick={() => putForSale(tokenId, 200)}
+                      onClick={() => putForSale(tokenId, Web3.utils.toWei('1', 'ether'))}
                     >
-                      Sell
+                      گذاشتن برای فروش
                     </Button>
                   )}
                   {owner !== account && isForSale && (
@@ -161,7 +161,7 @@ const Item = () => {
                       color="primary"
                       onClick={() => buy(saleId, 200)}
                     >
-                      Buy
+                      خرید
                     </Button>
                   )}
                 </fieldset>
